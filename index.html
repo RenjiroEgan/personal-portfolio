@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My Portfolio</title>
+    <link rel="icon" type="image/png" href="images/e.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>e</span><span>g</span><span>a</span><span>n</span> <span>r</span><span>e</span><span>n</span><span class="secret-trigger">j</span><span>i</span><span>r</span><span>o</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <h1 class="hero-title">Hello, It's <span class="egan-highlight">Egan</span></h1>
+            <p class="hero-subtitle">I’m a full-time student at Universiti Teknologi PETRONAS 🎓<br>Passionate in data-driven cutting edge solutions to drive growth</p>
+            <a href="about.html" class="hero-btn btn">Dive Deeper Into Me</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Muhammad Egan Renjiro. All rights reserved.</p>
+    </footer>
+    <script src="https://unpkg.com/three@0.126.1/build/three.min.js"></script>
+    <script src="https://unpkg.com/vanta@0.5.24/dist/vanta.rings.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            VANTA.RINGS({
+                el: "main",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0x1e1e1e,
+                backgroundColor: 0x121212
+            })
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - My Portfolio</title>
+    <link rel="icon" type="image/png" href="images/e.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>e</span><span>g</span><span>a</span><span>n</span> <span>r</span><span>e</span><span>n</span><span class="secret-trigger">j</span><span>i</span><span>r</span><span>o</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h1>About Me</h1>
+            <p>Muhammad Egan Renjiro (Jiro) is a double degree student in Information Systems, studying at both Universiti Teknologi PETRONAS (Malaysia) and Telkom University (Indonesia). His studies focus on Financial Technology and Corporate Management, and he has gained practical industry experience through his work with prominent firms such as Kantar and AstraZeneca.</p>
+            <p>Throughout his university life, Jiro has demonstrated strong leadership and team management abilities. He has held key positions in student organizations like AIESEC and has successfully competed in various information technology and business case competitions, showcasing his skills in real-world scenarios.</p>
+            <p>Outside of his academic and professional life, Jiro is passionate about culinary and cultural arts. He actively explores these interests through his hobbies, which include both analog and digital photography, travelling, and volunteering for social causes.</p>
+            <h2>My Details</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3>Professional 📊</h3>
+                    <button class="view-btn" onclick="openModal('modal-professional')">Find out</button>
+                </div>
+                <div class="detail-card">
+                    <h3>Personal 📷</h3>
+                    <button class="view-btn" onclick="openModal('modal-personal')">Find out</button>
+                </div>
+                <div class="detail-card">
+                    <h3>Volunteer 🪸</h3>
+                    <button class="view-btn" onclick="openModal('modal-volunteer')">Find out</button>
+                </div>
+            </div>
+
+            <!-- Professional Modal -->
+            <div id="modal-professional" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal-professional')">&times;</span>
+                    <h2>Professional 📊</h2>
+                    <p>Details about professional experience coming soon.</p>
+                </div>
+            </div>
+
+            <!-- Personal Modal -->
+            <div id="modal-personal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal-personal')">&times;</span>
+                    <h2>Personal 📷</h2>
+                    <p>Details about personal life coming soon.</p>
+                </div>
+            </div>
+
+            <!-- Volunteer Modal -->
+            <div id="modal-volunteer" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal-volunteer')">&times;</span>
+                    <h2>Volunteer 🪸</h2>
+                    <p>Details about volunteer work coming soon.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Muhammad Egan Renjiro. All rights reserved.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
