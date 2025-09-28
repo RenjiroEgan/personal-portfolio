@@ -28,6 +28,25 @@
             <a href="about.html" class="hero-btn btn">Dive Deeper Into Me</a>
         </section>
     </main>
+    <style>
+        :root {
+            --primary-color: #4F200D;
+            --secondary-color: #FFD93D;
+            --accent-color: #FF9A00;
+            --background-color: #F6F1E9;
+            --card-background: #ffffff;
+            --text-color: #212121;
+            --light-text-color: #757575;
+            --border-color: #e0e0e0;
+        }
+        main {
+            background: transparent;
+        }
+        footer {
+            background: transparent;
+            color: #fff;
+        }
+    </style>
     <footer>
         <p>&copy; 2025 Muhammad Egan Renjiro. All rights reserved.</p>
     </footer>
@@ -36,7 +55,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             VANTA.RINGS({
-                el: "main",
+                el: "body",
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: false,

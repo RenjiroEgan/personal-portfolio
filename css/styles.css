@@ -88,10 +88,18 @@ nav a.active {
 /* Main Content */
 main {
     margin-top: 70px; /* Account for fixed header */
-    padding: 2rem;
+    padding: 1rem 2rem;
     flex: 1;
     min-height: calc(100vh - 70px - 50px); /* Ensure main fills viewport minus header/footer, no scroll */
     background-color: #121212;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+main.loaded {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Hero Section (Home) */
@@ -100,7 +108,7 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 1rem 2rem 4rem 2rem; /* Reduced top padding to position 'a bit up' */
+    padding: 0.5rem 2rem 4rem 2rem; /* Reduced top padding further to position nearer to header */
     background: none;
     color: #fff;
     min-height: calc(100vh - 70px - 50px - 4rem); /* Fit within main's min-height, no scroll */
@@ -140,6 +148,7 @@ main {
     margin-bottom: 0.1rem;
     align-self: flex-start;
     font-weight: 600;
+    text-align: left;
 }
 
 #hero p {
@@ -147,6 +156,7 @@ main {
     margin-bottom: 2rem;
     align-self: flex-start;
     font-weight: 300;
+    text-align: left;
 }
 
 .btn {
@@ -171,6 +181,7 @@ main {
 }
 
 #about h1 {
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 2rem;
     color: #fff;
@@ -220,11 +231,12 @@ main {
 
 /* Work Section */
 #work {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 #work h1 {
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 2rem;
     color: #fff;
@@ -324,11 +336,12 @@ main {
 
 /* Contact Section */
 #contact {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 #contact h1 {
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 2rem;
     color: #fff;
@@ -395,12 +408,23 @@ main {
     background: #555;
 }
 
+/* Detail Header */
+.back-btn:hover {
+    background: #333;
+    border-radius: 5px;
+}
+
+.tab:hover {
+    background: #333;
+    border-radius: 5px;
+}
+
 /* Footer */
 footer {
     background: #1e1e1e;
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     margin-top: auto;
 }
 
@@ -414,7 +438,30 @@ footer {
         margin: 0.5rem 0;
     }
 
-    #hero h1 {
+    .detail-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .detail-header .back-btn {
+        position: static;
+        margin-bottom: 1rem;
+    }
+
+    .detail-header h1 {
+        margin-bottom: 1rem;
+    }
+
+    .detail-header .tabs {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #hero h1,
+    #about h1,
+    #work h1,
+    #contact h1 {
         font-size: 2rem;
     }
 
@@ -426,3 +473,4 @@ footer {
         padding: 1rem;
     }
 }
+

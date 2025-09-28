@@ -69,6 +69,61 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Personal page: Carousel functionality for Travelling Diary
+    if (document.getElementById('personal')) {
+        const slides = [
+            { image: 'images/Personal Section/Changi.jpg', title: 'Changi Airport', subtitle: 'Singapore\'s world-class gateway to adventures.' },
+            { image: 'images/Personal Section/Enoshima.jpg', title: 'Enoshima Island', subtitle: 'Picturesque beaches and ancient shrines in Japan.' },
+            { image: 'images/Personal Section/Ginza.jpg', title: 'Ginza District', subtitle: 'Tokyo\'s luxurious shopping and dining hub.' },
+            { image: 'images/Personal Section/Harajuku.jpg', title: 'Harajuku', subtitle: 'Youth culture and fashion in Tokyo.' },
+            { image: 'images/Personal Section/Jakarta.jpg', title: 'Jakarta', subtitle: 'Indonesia\'s bustling capital city.' },
+            { image: 'images/Personal Section/Kamakura.jpg', title: 'Kamakura', subtitle: 'Historic temples and the Great Buddha in Japan.' },
+            { image: 'images/Personal Section/Kawagoe.jpg', title: 'Kawagoe', subtitle: 'Little Edo with preserved Edo-period architecture.' },
+            { image: 'images/Personal Section/KL.jpg', title: 'Kuala Lumpur', subtitle: 'Malaysia\'s vibrant metropolis and Petronas Towers.' },
+            { image: 'images/Personal Section/Manila.jpg', title: 'Manila', subtitle: 'Philippines\' historic and cultural heart.' },
+            { image: 'images/Personal Section/Omiya.jpg', title: 'Omiya', subtitle: 'Railway museum and bonsai village in Saitama, Japan.' },
+            { image: 'images/Personal Section/Shibuya.jpg', title: 'Shibuya Crossing', subtitle: 'Tokyo\'s iconic scramble crossing and urban energy.' },
+            { image: 'images/Personal Section/Shinjuku.jpg', title: 'Shinjuku', subtitle: 'Tokyo\'s skyscrapers, nightlife, and gardens.' },
+            { image: 'images/Personal Section/Yokohama.jpg', title: 'Yokohama', subtitle: 'Japan\'s port city with Chinatown and waterfront views.' }
+        ];
+
+        let currentSlideIndex = 0;
+        const imageEl = document.getElementById('carousel-image');
+        const titleEl = document.getElementById('carousel-title');
+        const subtitleEl = document.getElementById('carousel-subtitle');
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+
+        function showSlide(index) {
+            const content = document.querySelector('.carousel-content');
+            content.style.opacity = '0';
+
+            setTimeout(() => {
+                const slide = slides[index];
+                imageEl.src = slide.image;
+                titleEl.textContent = slide.title;
+                subtitleEl.textContent = slide.subtitle;
+                currentSlideIndex = index;
+                content.style.opacity = '1';
+            }, 250); // Half of transition duration for smooth fade
+        }
+
+        if (prevBtn && nextBtn && imageEl && titleEl && subtitleEl) {
+            prevBtn.addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+                showSlide(currentSlideIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                showSlide(currentSlideIndex);
+            });
+
+            // Initialize with first slide
+            showSlide(0);
+        }
+    }
+
     // Work page: Modal functionality for project cards
     if (document.getElementById('work')) {
         const modal = document.createElement('div');
@@ -122,16 +177,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Add a simple animation on page load for hero section (Home)
-if (document.getElementById('hero')) {
-    window.addEventListener('load', () => {
-        const hero = document.getElementById('hero');
-        hero.style.opacity = '0';
-        hero.style.transform = 'translateY(20px)';
-        hero.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        setTimeout(() => {
-            hero.style.opacity = '1';
-            hero.style.transform = 'translateY(0)';
-        }, 100);
-    });
-}
+// Add a simple animation on page load for all pages
+window.addEventListener('load', () => {
+    const main = document.querySelector('main');
+    if (main) {
+        main.classList.add('loaded');
+    }
+});
